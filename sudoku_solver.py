@@ -10,7 +10,7 @@ class Sudoku():
     def __init__(self):
         self.board = [[EMPTY_CELL for x in range(NUM_COLS)] for y in range(NUM_ROWS)]
     
-    def do_sudoku_set(self, row, col, num):
+    def set_pos(self, row, col, num):
         self.board[row][col] = num
     
     def create_starter_board(self):
@@ -21,7 +21,7 @@ class Sudoku():
                 row, col, num = int(inputs[0]), int(inputs[1]), int(inputs[2])
                 self.valid_move(row, col, num)
                 print("Move is valid")
-                self.do_sudoku_set(row, col, num)
+                self.set_pos(row, col, num)
                 print("Move has been set")
             except ValueError:
                 print("Failed due to value error")
@@ -82,10 +82,10 @@ class Sudoku():
         for num in range(1, 10):
             try:
                 self.valid_move(row, col, num)
-                self.do_sudoku_set(row, col, num)
+                self.set_pos(row, col, num)
                 return self.solve()
             except ValueError:
-                self.do_sudoku_set(row, col, EMPTY_CELL)
+                self.set_pos(row, col, EMPTY_CELL)
         raise ValueError(f"No available moves")
 
 
