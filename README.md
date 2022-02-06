@@ -1,1 +1,4 @@
-Sudoku solver program. Input starting squares in sudoku and algorithm will provide solution. The Python solver is equivalent to the C solver, was simply added for performance comparison. 
+# Sudoku Solver
+
+Command line based sudoku solver program. Input starting squares in sudoku and program will provide solution. Repo contains C and Python implementations of backtracking algorithm to solve sudoku. Each implementation is equivalent, however can be used for performance comparison of C vs Python.
+
